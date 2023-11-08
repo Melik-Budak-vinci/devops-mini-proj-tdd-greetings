@@ -1,0 +1,22 @@
+{
+  "name": "devops-mini-proj-tdd-greetings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Melik-Budak-vinci/devops-mini-proj-tdd-greetings.git"
+  },
+  "author": "MELIK,HAKIM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Melik-Budak-vinci/devops-mini-proj-tdd-greetings/issues"
+  },
+  "homepage": "https://github.com/Melik-Budak-vinci/devops-mini-proj-tdd-greetings#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
