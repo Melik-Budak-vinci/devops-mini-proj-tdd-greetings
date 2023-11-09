@@ -1,4 +1,7 @@
 function greet(names) {
-    return "Hello, "+names
+  if(names===null){
+    return "Hello, my friend."
+  }
+    return "Hello, "+names+'.'
 }
 module.exports = greet
