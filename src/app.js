@@ -1,5 +1,5 @@
 function greet(names) {
-  if(names===null){
+  if(names===null || names===undefined){
     return "Hello, my friend."
   }
     return "Hello, "+names+'.'

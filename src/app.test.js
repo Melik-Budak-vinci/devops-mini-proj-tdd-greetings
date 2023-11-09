@@ -7,4 +7,8 @@ test('should to be return Hello, (name in table)', () => {
 test('should to be return Hello, my friend when array is null', () => {
   const result = greet(null)
   expect(result).toEqual("Hello, my friend.")
+}),
+test('should to be return Hello, my friend when array is undefind ', () => {
+  const result = greet(undefined)
+  expect(result).toEqual("Hello, my friend.")
 })

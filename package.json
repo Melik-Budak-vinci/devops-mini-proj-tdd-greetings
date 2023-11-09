@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
         "test": "jest --watch",
-        "test:watch": "jest --watchAll ./src/appSpec.js",
+        "test:watch": "jest --watchAll",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "prettier": "npx prettier . --check",
