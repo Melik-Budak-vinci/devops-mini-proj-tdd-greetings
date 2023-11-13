@@ -24,4 +24,9 @@ test('should to be return Hello, name and second name when we have two name in a
   const result = greet(["Kratos","Thanathos"])
 
   expect(result).toEqual("Hello, Kratos and Thanathos.");
+}),
+test('should to be return Hello, name and second name when we have more than two name in array ',()=>{
+  const result = greet(["Kratos","Thanathos","Hypnos"])
+
+  expect(result).toEqual("Hello, Kratos, Thanathos and Hypnos.");
 })
