@@ -15,4 +15,8 @@ test('should to be return Hello, my friend when array is undefind ', () => {
 test('should to be return Hello, my friend when the string in array is empty ', () => {
   const result = greet("     ")
   expect(result).toEqual("Hello, my friend.")
+}),
+test('should to be return HELLO, NAME when the name on upper ', () => {
+  const result = greet("KENOBI")
+  expect(result).toEqual("HELLO, KENOBI!")
 })
