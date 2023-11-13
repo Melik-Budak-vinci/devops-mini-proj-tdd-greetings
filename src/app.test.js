@@ -19,4 +19,9 @@ test('should to be return Hello, my friend when the string in array is empty ', 
 test('should to be return HELLO, NAME when the name on upper ', () => {
   const result = greet("KENOBI")
   expect(result).toEqual("HELLO, KENOBI!")
+}),
+test('should to be return Hello, name and second name when we have two name in array ',()=>{
+  const result = greet(["Kratos","Thanathos"])
+
+  expect(result).toEqual("Hello, Kratos and Thanathos.");
 })
