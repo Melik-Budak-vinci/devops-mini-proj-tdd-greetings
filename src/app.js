@@ -4,7 +4,7 @@ function greet(names) {
     if (Array.isArray(names)) {
         return handleArray(names)
     }
-    if (!names || names.trim() === '') return 'Hello, my friend.'
+    if (isIllegalArgument(names)) return 'Hello, my friend.'
     if (names === names.toUpperCase()) return 'HELLO, ' + names + '!'
 
     return 'Hello, ' + names + '.'
@@ -27,6 +27,9 @@ function handleArray(names) {
             str += ', ' + names[index]
         }
     }
+}
+function isIllegalArgument(names) {
+    return !names || names.trim() === ''
 }
 
 module.exports = greet
