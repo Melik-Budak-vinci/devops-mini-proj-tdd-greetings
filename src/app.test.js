@@ -30,7 +30,7 @@ test('should to be return Hello, (name in table)', () => {
 
         expect(result).toEqual('Hello, Kratos, Thanathos and Hypnos.')
     })
-test('should to be return Hello, name on uppercase and other name when we have one name on upper in this array', () => {
+test('should to be return Hello, name on lowercase and HELLO name on uppercase when we have one name on upper in this array', () => {
     const result = greet(['KRATOS', 'Thanathos', 'Hypnos'])
     expect(result).toEqual('Hello, Thanathos and Hypnos. AND HELLO KRATOS!')
 })
