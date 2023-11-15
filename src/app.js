@@ -11,8 +11,6 @@ function greet(names) {
 }
 
 function handleArray(names) {
-    if (names.length === 2)
-        return 'Hello, ' + names[0] + ' and ' + names[1] + '.'
     let str = 'Hello'
     let hello = ' AND HELLO '
     let up = false
