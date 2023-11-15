@@ -5,7 +5,7 @@ function greet(names) {
         return handleArray(names)
     }
     if (isIllegalArgument(names)) return 'Hello, my friend.'
-    if (names === names.toUpperCase()) return 'HELLO, ' + names + '!'
+    if (isUpper(names)) return 'HELLO, ' + names + '!'
 
     return 'Hello, ' + names + '.'
 }
@@ -20,7 +20,7 @@ function handleArray(names) {
         if (index === names.length - 1) {
             if (up) return str + ' and ' + names[index] + '.' + hello + '!'
             return str + ' and ' + names[index] + '.'
-        } else if (names[index].toUpperCase() === names[index]) {
+        } else if (isUpper(names[index])) {
             hello += names[index]
             up = true
         } else {
@@ -30,6 +30,9 @@ function handleArray(names) {
 }
 function isIllegalArgument(names) {
     return !names || names.trim() === ''
+}
+function isUpper(names) {
+    return names === names.toUpperCase()
 }
 
 module.exports = greet
