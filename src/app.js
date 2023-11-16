@@ -2,12 +2,14 @@ const { boolean } = require('yargs')
 
 function greet(names) {
     if (Array.isArray(names)) {
-        const greetInLower = handleArray(names.filter(name => !isUpper(name)));
-        const greetInUpper = handleArray(names.filter(name => isUpper(name)));
-        if(!greetInUpper){
-            return greetInLower;
+        const greetInLower = handleArray(names.filter((name) => !isUpper(name)))
+        const filterUpper = names.filter((name) => isUpper(name))
+
+        if (filterUpper.length === 0) {
+            return greetInLower
         }
-        return greetInLower+greetInUpper;
+        const greetInUpper = handleArray(filterUpper)
+        return greetInLower + greetInUpper
     }
     if (isIllegalArgument(names)) return 'Hello, my friend.'
     if (isUpper(names)) return 'HELLO, ' + names + '!'
@@ -16,16 +18,33 @@ function greet(names) {
 }
 
 function handleArray(names) {
-    let str = 'Hello';
+    let str = 'Hello'
+    let and = ' and '
+    let point = '.'
+    let comma=', '
+    let isUp = isUpper(names[0])
+
+    if (isUp) {
+        lowerToUpper()
+    }
+    if (names.length === 1) {
+        return str + comma + names[0] + point
+    }
     for (let index = 0; index < names.length; index++) {
         if (index === names.length - 1) {
-            if(isUpper(names[index])){
-                return ' AND HELLO '+names[index]+'!'
-            }
-            return str + ' and ' + names[index] + '.'
-        }else {
+            return str + and + names[index] + point
+        } else if (index>0) {
             str += ', ' + names[index]
+        } else {
+            str += comma + names[index]
         }
+    }
+
+    function lowerToUpper() {
+        str = and.toUpperCase() + str.toUpperCase()
+        and = and.toUpperCase()
+        point = '!'
+        comma=" "
     }
 }
 function isIllegalArgument(names) {
