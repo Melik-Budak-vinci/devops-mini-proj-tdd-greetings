@@ -2,9 +2,9 @@
     "name": "devops-mini-proj-tdd-greetings",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "app.js",
     "scripts": {
-        "test": "jest --coverage",
+        "test": "jest --watch",
         "test:watch": "jest --watchAll",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
