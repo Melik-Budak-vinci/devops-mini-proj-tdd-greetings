@@ -2,7 +2,12 @@ const { boolean } = require('yargs')
 
 function greet(names) {
     if (Array.isArray(names)) {
-        return handleArray(names)
+        const greetInLower = handleArray(names.filter(name => !isUpper(name)));
+        const greetInUpper = handleArray(names.filter(name => isUpper(name)));
+        if(!greetInUpper){
+            return greetInLower;
+        }
+        return greetInLower+greetInUpper;
     }
     if (isIllegalArgument(names)) return 'Hello, my friend.'
     if (isUpper(names)) return 'HELLO, ' + names + '!'
@@ -11,17 +16,14 @@ function greet(names) {
 }
 
 function handleArray(names) {
-    let str = 'Hello'
-    let hello = ' AND HELLO '
-    let up = false
+    let str = 'Hello';
     for (let index = 0; index < names.length; index++) {
         if (index === names.length - 1) {
-            if (up) return str + ' and ' + names[index] + '.' + hello + '!'
+            if(isUpper(names[index])){
+                return ' AND HELLO '+names[index]+'!'
+            }
             return str + ' and ' + names[index] + '.'
-        } else if (isUpper(names[index])) {
-            hello += names[index]
-            up = true
-        } else {
+        }else {
             str += ', ' + names[index]
         }
     }

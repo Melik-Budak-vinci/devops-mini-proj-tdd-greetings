@@ -34,3 +34,4 @@ test('should to be return Hello, name on lowercase and HELLO name on uppercase w
     const result = greet(['KRATOS', 'Thanathos', 'Hypnos'])
     expect(result).toEqual('Hello, Thanathos and Hypnos. AND HELLO KRATOS!')
 })
+
