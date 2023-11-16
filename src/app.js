@@ -2,8 +2,8 @@ const { boolean } = require('yargs')
 
 function greet(names) {
     if (Array.isArray(names)) {
-        const greetInLower = handleArray(names.filter((name) => !isUpper(name)))
-        const filterUpper = names.filter((name) => isUpper(name))
+        const greetInLower = handleArray(filterInLower(names),(names[names.length-1]))
+        const filterUpper = filterInUpper(names)
 
         if (filterUpper.length === 0) {
             return greetInLower
@@ -17,13 +17,27 @@ function greet(names) {
     return 'Hello, ' + names + '.'
 }
 
-function handleArray(names) {
+function filterInLower(names) {
+    return names.filter((name) => !isUpper(name) && (name !== 'fr' && name !== 'nl'))
+}
+function filterInUpper(names) {
+    return names.filter((name) => isUpper(name) && (name !== 'fr' && name !== 'nl'))
+}
+
+function handleArray(names,language) {
     let str = 'Hello'
     let and = ' and '
     let point = '.'
     let comma=', '
     let isUp = isUpper(names[0])
-
+     if(language==='fr'){
+        str='Bonjour'
+        and=' et '
+     }
+     if(language==='nl'){
+        str='Goedag'
+        and=' en '
+     }
     if (isUp) {
         lowerToUpper()
     }

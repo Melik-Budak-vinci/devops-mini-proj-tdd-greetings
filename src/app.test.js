@@ -40,3 +40,9 @@ test('should to be return,(Hello, Thanathos and Hypnos. AND HELLO KRATOS AND TAN
         'Hello, Thanathos and Hypnos. AND HELLO KRATOS AND TANOS!'
     )
 })
+test('should to be return,(Bonjour Kratos et Thanatos.) when we have fr in array', () => {
+    const result = greet(['Kratos', 'Thanathos','fr'])
+    expect(result).toEqual(
+        'Bonjour, Kratos et Thanathos.'
+    )
+})
