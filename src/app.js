@@ -35,7 +35,7 @@ function handleArray(names,language) {
         and=' et '
      }
      if(language==='nl'){
-        str='Goedag'
+        str='Hallo'
         and=' en '
      }
     if (isUp) {
