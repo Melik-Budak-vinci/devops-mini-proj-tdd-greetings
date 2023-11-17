@@ -2,7 +2,10 @@ const { boolean } = require('yargs')
 
 function greet(names) {
     if (Array.isArray(names)) {
-        const greetInLower = handleArray(filterInLower(names),(names[names.length-1]))
+        const greetInLower = handleArray(
+            filterInLower(names),
+            names[names.length - 1]
+        )
         const filterUpper = filterInUpper(names)
 
         if (filterUpper.length === 0) {
@@ -18,26 +21,30 @@ function greet(names) {
 }
 
 function filterInLower(names) {
-    return names.filter((name) => !isUpper(name) && (name !== 'fr' && name !== 'nl'))
+    return names.filter(
+        (name) => !isUpper(name) && name !== 'fr' && name !== 'nl'
+    )
 }
 function filterInUpper(names) {
-    return names.filter((name) => isUpper(name) && (name !== 'fr' && name !== 'nl'))
+    return names.filter(
+        (name) => isUpper(name) && name !== 'fr' && name !== 'nl'
+    )
 }
 
-function handleArray(names,language) {
+function handleArray(names, language) {
     let str = 'Hello'
     let and = ' and '
     let point = '.'
-    let comma=', '
+    let comma = ', '
     let isUp = isUpper(names[0])
-     if(language==='fr'){
-        str='Bonjour'
-        and=' et '
-     }
-     if(language==='nl'){
-        str='Hallo'
-        and=' en '
-     }
+    if (language === 'fr') {
+        str = 'Bonjour'
+        and = ' et '
+    }
+    if (language === 'nl') {
+        str = 'Hallo'
+        and = ' en '
+    }
     if (isUp) {
         lowerToUpper()
     }
@@ -47,7 +54,7 @@ function handleArray(names,language) {
     for (let index = 0; index < names.length; index++) {
         if (index === names.length - 1) {
             return str + and + names[index] + point
-        } else if (index>0) {
+        } else if (index > 0) {
             str += ', ' + names[index]
         } else {
             str += comma + names[index]
@@ -58,7 +65,7 @@ function handleArray(names,language) {
         str = and.toUpperCase() + str.toUpperCase()
         and = and.toUpperCase()
         point = '!'
-        comma=" "
+        comma = ' '
     }
 }
 function isIllegalArgument(names) {
