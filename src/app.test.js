@@ -29,18 +29,18 @@ test('should to be return Hello, (name in table)', () => {
         const result = greet(['Kratos', 'Thanathos', 'Hypnos'])
 
         expect(result).toEqual('Hello, Kratos, Thanathos and Hypnos.')
+    }),
+    test('should to be return Hello, name on lowercase and HELLO name on uppercase when we have one name on upper in this array', () => {
+        const result = greet(['KRATOS', 'Thanathos', 'Hypnos'])
+        expect(result).toEqual('Hello, Thanathos and Hypnos. AND HELLO KRATOS!')
+    }),
+    test('should to be return,(Hello, Thanathos and Hypnos. AND HELLO KRATOS AND TANOS!) when we have many names on upper in this array', () => {
+        const result = greet(['KRATOS', 'Thanathos', 'Hypnos', 'TANOS'])
+        expect(result).toEqual(
+            'Hello, Thanathos and Hypnos. AND HELLO KRATOS AND TANOS!'
+        )
+    }),
+    test('should to be return,(Bonjour Kratos et Thanatos.) when we have fr in array', () => {
+        const result = greet(['Kratos', 'Thanathos', 'fr'])
+        expect(result).toEqual('Bonjour, Kratos et Thanathos.')
     })
-test('should to be return Hello, name on lowercase and HELLO name on uppercase when we have one name on upper in this array', () => {
-    const result = greet(['KRATOS', 'Thanathos', 'Hypnos'])
-    expect(result).toEqual('Hello, Thanathos and Hypnos. AND HELLO KRATOS!')
-})
-test('should to be return,(Hello, Thanathos and Hypnos. AND HELLO KRATOS AND TANOS!) when we have many names on upper in this array', () => {
-    const result = greet(['KRATOS', 'Thanathos', 'Hypnos', 'TANOS'])
-    expect(result).toEqual(
-        'Hello, Thanathos and Hypnos. AND HELLO KRATOS AND TANOS!'
-    )
-})
-test('should to be return,(Bonjour Kratos et Thanatos.) when we have fr in array', () => {
-    const result = greet(['Kratos', 'Thanathos', 'fr'])
-    expect(result).toEqual('Bonjour, Kratos et Thanathos.')
-})
