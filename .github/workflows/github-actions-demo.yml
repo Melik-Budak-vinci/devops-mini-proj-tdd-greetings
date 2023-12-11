@@ -31,3 +31,4 @@ jobs:
             - name: 'throwing test'
               run: |
                   npm run test:watch
+            
