@@ -34,3 +34,5 @@ jobs:
             - name: 'building code with webPack'
               run: |
                   npm run build
+            - name: 'Display ending of pipeline  '
+              run: echo "The pipeline finish at $(date + "%H:%M:%S %Z")"
