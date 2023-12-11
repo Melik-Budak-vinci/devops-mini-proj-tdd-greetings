@@ -28,6 +28,6 @@ jobs:
             - name: 'Checking code with lint'
               run: |
                   npm run lint
-            - name: 'throwing test'
+            - name: 'Checking code with test coverage '
               run: |
-                  npm run test:watch
+                  npm run test:cover
