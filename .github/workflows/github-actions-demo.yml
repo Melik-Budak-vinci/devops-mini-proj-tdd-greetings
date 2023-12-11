@@ -28,3 +28,7 @@ jobs:
             - name: 'Checking code with lint'
               run: |
                   npm run lint
+            - name: 'throwing test'
+              run: | 
+                  npm run test
+
