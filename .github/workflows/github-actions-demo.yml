@@ -22,4 +22,5 @@ jobs:
             - name: 'Display start of pipeline  '
               run: echo "The pipeline begins at $(date + "%H:%M:%S %Z")"
             - name: 'Checking code'
-              run: npx prettier . --check
+              run: npm run prettier
+
