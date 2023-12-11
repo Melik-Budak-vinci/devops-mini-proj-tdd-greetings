@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Github Actions CI
 
 on: [push]
 jobs:
@@ -21,4 +21,5 @@ jobs:
               run: npm install
             - name: "Display start of pipeline  "
               run: echo "The pipeline begins at $(date + "%H:%M:%S %Z")"
-             
+            - name: 'Checking code'
+              run: npm run prettier
