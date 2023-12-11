@@ -30,4 +30,4 @@ jobs:
                   npm run lint
             - name: 'throwing test'
               run: |
-                  npm test
+                  npm test:watch
