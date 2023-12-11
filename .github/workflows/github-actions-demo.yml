@@ -18,9 +18,13 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'npm'
             - name: 'Install dependencies'
-              run: npm install
+              run: |
+                  npm install
             - name: 'Display start of pipeline  '
               run: echo "The pipeline begins at $(date + "%H:%M:%S %Z")"
             - name: 'Checking code'
               run: |
                   npm run prettier
+            - name: 'Checking code with lint'
+              run: |
+                  npm run lint

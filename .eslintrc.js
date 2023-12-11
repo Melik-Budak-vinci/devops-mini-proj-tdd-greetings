@@ -4,7 +4,7 @@ module.exports = {
         commonjs: true,
         es2021: true,
     },
-    extends: ['prettier'],
+    extends: ['eslint:recommended', 'prettier'],
     overrides: [
         {
             env: {
@@ -20,9 +20,9 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
+    plugins: ['prettier'],
     rules: {
-        linebreakStyle: ['error', 'unix'],
+        'prettier/prettier': 'error',
         semi: ['error', 'always'],
-        quotes: ['error', 'double'],
     },
 };
