@@ -19,7 +19,7 @@ jobs:
                   cache: 'npm'
             - name: 'Install dependencies'
               run: npm install
-            - name: "Display start of pipeline  "
+            - name: 'Display start of pipeline  '
               run: echo "The pipeline begins at $(date + "%H:%M:%S %Z")"
             - name: 'Checking code'
-              run: npm run prettier
+              run: npx prettier . --check

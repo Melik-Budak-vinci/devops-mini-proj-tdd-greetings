@@ -1,4 +1,3 @@
-
 function greet(names) {
     if (Array.isArray(names)) {
         const greetInLower = handleArray(
@@ -13,36 +12,36 @@ function greet(names) {
         const greetInUpper = handleArray(filterUpper, names[names.length - 1]);
         return greetInLower + greetInUpper;
     }
-    if (isIllegalArgument(names)) return "Hello, my friend.";
-    if (isUpper(names)) return "HELLO, " + names + "!";
+    if (isIllegalArgument(names)) return 'Hello, my friend.';
+    if (isUpper(names)) return 'HELLO, ' + names + '!';
 
-    return "Hello, " + names + ".";
+    return 'Hello, ' + names + '.';
 }
 
 function filterInLower(names) {
     return names.filter(
-        (name) => !isUpper(name) && name !== "fr" && name !== "nl"
+        (name) => !isUpper(name) && name !== 'fr' && name !== 'nl'
     );
 }
 function filterInUpper(names) {
     return names.filter(
-        (name) => isUpper(name) && name !== "fr" && name !== "nl"
+        (name) => isUpper(name) && name !== 'fr' && name !== 'nl'
     );
 }
 
 function handleArray(names, language) {
-    let str = "Hello";
-    let and = " and ";
-    let point = ".";
-    let comma = ", ";
+    let str = 'Hello';
+    let and = ' and ';
+    let point = '.';
+    let comma = ', ';
     let isUp = isUpper(names[0]);
-    if (language === "fr") {
-        str = "Bonjour";
-        and = " et ";
+    if (language === 'fr') {
+        str = 'Bonjour';
+        and = ' et ';
     }
-    if (language === "nl") {
-        str = "Hallo";
-        and = " en ";
+    if (language === 'nl') {
+        str = 'Hallo';
+        and = ' en ';
     }
     if (isUp) {
         lowerToUpper();
@@ -54,7 +53,7 @@ function handleArray(names, language) {
         if (index === names.length - 1) {
             return str + and + names[index] + point;
         } else if (index > 0) {
-            str += ", " + names[index];
+            str += ', ' + names[index];
         } else {
             str += comma + names[index];
         }
@@ -63,12 +62,12 @@ function handleArray(names, language) {
     function lowerToUpper() {
         str = and.toUpperCase() + str.toUpperCase();
         and = and.toUpperCase();
-        point = "!";
-        comma = " ";
+        point = '!';
+        comma = ' ';
     }
 }
 function isIllegalArgument(names) {
-    return !names || names.trim() === "";
+    return !names || names.trim() === '';
 }
 function isUpper(names) {
     return names === names.toUpperCase();
