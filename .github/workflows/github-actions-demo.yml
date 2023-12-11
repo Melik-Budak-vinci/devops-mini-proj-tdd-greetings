@@ -21,7 +21,8 @@ jobs:
               run: |
                   npm install
             - name: 'Display start of pipeline  '
-              run: echo "The pipeline begins at $(date + "%H:%M:%S %Z")"
+              run: |
+                  echo "The pipeline begins at $(date + "%H:%M:%S %Z")"
             - name: 'Checking code'
               run: |
                   npm run prettier
@@ -35,4 +36,8 @@ jobs:
               run: |
                   npm run build
             - name: 'Display ending of pipeline  '
-              run: echo "The pipeline finish at $(date + "%H:%M:%S %Z")"
+              run: |
+                  echo "The pipeline finish at $(date + "%H:%M:%S %Z")"
+            - name: 'Display pipeline success'
+              run: |
+                  echo "PIPELINE SUCCESS WITHOUT ERRORS"
