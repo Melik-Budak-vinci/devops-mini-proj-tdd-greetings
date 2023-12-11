@@ -31,3 +31,6 @@ jobs:
             - name: 'Checking code with test coverage '
               run: |
                   npm run test:cover
+            - name: 'building code with webPack'
+              run: |
+                npm run build
