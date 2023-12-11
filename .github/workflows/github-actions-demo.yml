@@ -29,6 +29,5 @@ jobs:
               run: |
                   npm run lint
             - name: 'throwing test'
-              run: | 
+              run: |
                   npm run test
-
