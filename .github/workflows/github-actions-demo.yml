@@ -33,4 +33,4 @@ jobs:
                   npm run test:cover
             - name: 'building code with webPack'
               run: |
-                npm run build
+                  npm run build
