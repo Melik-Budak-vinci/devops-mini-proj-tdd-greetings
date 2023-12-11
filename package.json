@@ -8,8 +8,8 @@
         "test:watch": "jest --watchAll",
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
-        "prettier": "npx prettier . --check",
-        "prettier:fix": "npx prettier . --write"
+        "prettier": "npm prettier . --check",
+        "prettier:fix": "npm prettier . --write"
     },
     "repository": {
         "type": "git",
