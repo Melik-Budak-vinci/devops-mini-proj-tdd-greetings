@@ -1,7 +1,6 @@
 name: Github Actions CI
 
 on:
-    push:
     pull_request:
         branches:
             - main
@@ -26,7 +25,8 @@ jobs:
                   npm install
             - name: 'Display start of pipeline  '
               run: |
-                  echo "The pipeline begins at $(date + "%H:%M:%S %Z")"
+                  export TZ='Europe/Paris'
+                  echo "Le pipeline débute à $(date +'%H:%M:%S %Z')"
             - name: 'Checking code'
               run: |
                   npm run prettier
@@ -41,7 +41,8 @@ jobs:
                   npm run build
             - name: 'Display ending of pipeline  '
               run: |
-                  echo "The pipeline finish at $(date + "%H:%M:%S %Z")"
+                  export TZ='Europe/Paris'
+                  echo "Le pipeline débute à $(date +'%H:%M:%S %Z')"
             - name: 'Display pipeline success'
               run: |
                   echo "PIPELINE SUCCESS WITHOUT ERRORS"
