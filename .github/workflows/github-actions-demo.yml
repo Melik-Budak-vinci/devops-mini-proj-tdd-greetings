@@ -25,7 +25,8 @@ jobs:
                   npm install
             - name: 'Display start of pipeline  '
               run: |
-                  echo "The pipeline begins at $(TZ='UTC+1'date)"
+                export TZ='Europe/Paris'
+                echo "Le pipeline débute à $(date +'%H:%M:%S %Z')"
             - name: 'Checking code'
               run: |
                   npm run prettier
@@ -40,7 +41,8 @@ jobs:
                   npm run build
             - name: 'Display ending of pipeline  '
               run: |
-                  echo "The pipeline finish at $(TZ='UTC+1' date)"
+                export TZ='Europe/Paris'
+                echo "Le pipeline débute à $(date +'%H:%M:%S %Z')"
             - name: 'Display pipeline success'
               run: |
                   echo "PIPELINE SUCCESS WITHOUT ERRORS"
